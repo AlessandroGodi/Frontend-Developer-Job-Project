@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/c007b64272.js" crossorigin="anonymous"></script>
+    <title>Car Browse Website</title>
+    <link rel="stylesheet" href="./index.css">
+    <script src="./index.js" defer></script>
+</head>
+
+<body>
+    <nav id="banner">
+        <div class="row">
+            <div class="nav--wrapper">
+                <figure class="img__wrapper">
+                    <img src="./assets/imdb_logo.png" alt="" class="nav__img">
+                </figure>
+                <ul class="nav__links">
+                    <li>
+                        <a href="" class="nav__link nav__link--hover">Home</a>
+                    </li>
+                    <li>
+                        <a href="" class="nav__link nav__link--hover">Find A Movie</a>
+                    </li>
+                    <li >
+                        <a href="" class="nav__link nav__contact">CONTACT</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="nav__browse">
+                <h1 class="nav__title">
+                    Browse Our Movies
+                </h1>
+                <div class="nav__browse--wrapper">
+                    <input type="input" class="nav__browse--search" placeholder="Search by Title, Rating or Keyword">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main id="movie">
+        <div class="container">
+            <div class="row">
+                <div class="movie__search">
+                    <h2 class="search">
+                        Serch Results:
+                    </h2>
+                    <div class="search__rating">
+                        <h3 class="search__rating--fiilter">
+                            Filter:
+                        </h3>
+                        <input type="range" min="1950" max="2023" value="2000" class="search__rating--silder">
+                        <!-- FIGURE HOW THE FUCK TO DO A SLIDER // https://www.w3schools.com/howto/howto_js_rangeslider.asp-->
+                    </div>
+                </div>
+                <div class="movie__results">
+                    <div class="movie__result">
+                        <h3 class="movie__result--title">
+                            Movie Title
+                        </h3>
+                        <figure class="movie__result--img-wrapper">
+                            <img src="https://m.media-amazon.com/images/M/MV5BMjA2NjU5MTg5OF5BMl5BanBnXkFtZTgwOTkyMzQxMDE@._V1_SX300.jpg" alt="POSTER" class="movie__result--img">
+                           <!-- THIS IS THE POSTER IMG -->
+                        </figure>
+                        <p class="movie__result--year">
+                            Year
+                            <br>
+                            Type 
+                            <!-- movie or series -->
+                        </p>
+                        <h3 class="movie__result--imdbID">
+                            imdbID
+                        </h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+
+    </footer>
+</body>
+
+</html>
