@@ -219,7 +219,7 @@ MOVIE RESULTS
     padding: 5px;
     border: 2px solid #F5C518;
     border-radius: 25px;
-    margin: 0 24px;
+    margin: 0 24px 32px 24px;
 }
 
 .movie__result--title {
@@ -228,8 +228,13 @@ MOVIE RESULTS
     margin-bottom: 4px;
 }
 
+.movie__result--img-wrapper {
+    display: flex;
+    justify-content: center;
+}
+
 .movie__result--img {
-    width: 225px;
+    width: 90%;
     border-radius: 10px;
     transition: all 300ms ease;
 }

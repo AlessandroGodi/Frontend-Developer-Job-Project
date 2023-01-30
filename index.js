@@ -12,14 +12,16 @@ slider.oninput = function () {
 // https://www.omdbapi.com/?i=tt3896198&apikey=2ac18e86
 
 async function main() {
-    const movies = await fetch('https://www.omdbapi.com/?i=tt3896198&apikey=2ac18e86&s=fast');
+    const movies = await fetch('https://www.omdbapi.com/?i=tt3896198&apikey=2ac18e86&s=avengers');
     const movieData = await movies.json();
     const movieResultElem = document.querySelector('.movie__results')
-    const movieResult = Object.entries(movieData);
     
-    console.log(movieResult)
+    const movieResult = Object.entries(movieData);
+    const arrayData = movieResult[0][1]
+    // need to access and array within an array
+    console.log(arrayData)
 
-    movieResultElem.innerHTML = movieResult.map(movie => movieHTML(movie)).join('');
+    movieResultElem.innerHTML = arrayData.map(movie => movieHTML(movie)).join('');
 }
 
 function movieHTML(movie) {
@@ -29,7 +31,7 @@ function movieHTML(movie) {
                 ${movie.Title}
             </h3>
             <figure class="movie__result--img-wrapper">
-                <img src="https://m.media-amazon.com/images/M/MV5BMjA2NjU5MTg5OF5BMl5BanBnXkFtZTgwOTkyMzQxMDE@._V1_SX300.jpg" class="movie__result--img">
+                <img src="${movie.Poster}" class="movie__result--img">
             </figure>
         </div>
         <div class="box__middle">
@@ -37,13 +39,13 @@ function movieHTML(movie) {
                 <span class="text-yellow">${movie.Year}</span>
             </p>
             <p class="movie__result--text">
-                ${movie.Yype}
+                ${movie.Type}
                 <!-- movie or series -->
             </p>
         </div>
         <div class="box__bottom">
             <h3 class="movie__result--imdbID">
-                ${movie.ImdbID}
+                ${movie.imdbID}
             </h3>
         </div>
     </div>`
@@ -51,3 +53,8 @@ function movieHTML(movie) {
 
 main();
 
+
+// function to search within API
+function movieSearch() {
+    
+}
