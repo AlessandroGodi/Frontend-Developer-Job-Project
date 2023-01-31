@@ -12,10 +12,10 @@ slider.oninput = function () {
 // https://www.omdbapi.com/?i=tt3896198&apikey=2ac18e86
 
 async function main() {
-    const movies = await fetch('https://www.omdbapi.com/?i=tt3896198&apikey=2ac18e86&s=avengers');
+    const movies = await fetch(`https://www.omdbapi.com/?i=tt3896198&apikey=2ac18e86&s=fast`);
     const movieData = await movies.json();
     const movieResultElem = document.querySelector('.movie__results')
-    
+
     const movieResult = Object.entries(movieData);
     const arrayData = movieResult[0][1]
     // need to access and array within an array
@@ -53,8 +53,13 @@ function movieHTML(movie) {
 
 main();
 
-
 // function to search within API
-function movieSearch() {
-    
+const searchBar = document.getElementById('search__bar');
+searchBar.addEventListener('keyup', searchForMovie);
+
+function searchForMovie(title) {
+    const searchMovie = title.target.value;
+    console.log(searchMovie);
 }
+// https://blog.logrocket.com/localstorage-javascript-complete-guide/
+
