@@ -12,7 +12,7 @@ slider.oninput = function () {
 // https://www.omdbapi.com/?i=tt3896198&apikey=2ac18e86
 
 async function main() {
-    const movies = await fetch(`https://www.omdbapi.com/?i=tt3896198&apikey=2ac18e86&s=fast`);
+    const movies = await fetch(`https://www.omdbapi.com/?i=tt3896198&apikey=2ac18e86&s=iron man`);
     const movieData = await movies.json();
     const movieResultElem = document.querySelector('.movie__results')
 
@@ -31,7 +31,7 @@ function movieHTML(movie) {
                 ${movie.Title}
             </h3>
             <figure class="movie__result--img-wrapper">
-                <img src="${movie.Poster}" class="movie__result--img">
+                <img src="${movie.Poster}" class="movie__result--img no-click">
             </figure>
         </div>
         <div class="box__middle">
@@ -53,13 +53,12 @@ function movieHTML(movie) {
 
 main();
 
-// function to search within API
+// function to search within API -- FAILED TO MAKE WORKABLE 1/02/2023
 const searchBar = document.getElementById('search__bar');
 searchBar.addEventListener('keyup', searchForMovie);
 
 function searchForMovie(title) {
-    const searchMovie = title.target.value;
-    console.log(searchMovie);
+    return searchMovie = title.target.value;
 }
 // https://blog.logrocket.com/localstorage-javascript-complete-guide/
 
